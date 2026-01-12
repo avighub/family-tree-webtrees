@@ -1,0 +1,33 @@
+services:
+  db:
+    image: mariadb:10.11
+    container_name: webtrees-db
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
+      MARIADB_DATABASE: webtrees
+      MARIADB_USER: webtrees
+      MARIADB_PASSWORD: ${MARIADB_PASSWORD}
+    volumes:
+      - ./db/data:/var/lib/mysql
+
+  webtrees:
+    image: ghcr.io/nathanvaughn/webtrees:latest
+    container_name: webtrees-app
+    restart: unless-stopped
+    depends_on:
+      - db
+    ports:
+      - "8080:80"
+    env_file:
+      - .env
+    environment:
+      WT_DB_HOST: db
+      WT_DB_NAME: webtrees
+      WT_DB_USER: webtrees
+      WT_DB_PASSWORD: ${MARIADB_PASSWORD}
+    volumes:
+      - ./webtrees/data:/var/www/html/data
+      - ./webtrees/media:/var/www/html/media

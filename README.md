@@ -1,0 +1,12 @@
+- Create a new dir inside root: `mkdir srv`
+- Clone repository inside `srv` : 
+- Rename/Copy `.env-example` to `.env`
+  - Update passwords for `MARIADB_ROOT_PASSWORD` and `MARIADB_PASSWORD`
+- Start the apps : `docker compose up -d`
+- Open the Webtrees setup wizard: `localhost:8080`
+  - DB Config
+    - Database server : db
+    - Database port: 3306
+    - Database name: webtrees
+    - Database user: webtrees
+    - Database password: your-password-from-env-file
