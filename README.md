@@ -16,7 +16,7 @@ This project provides a complete genealogy and family tree management system pow
 ## Quick Start
 
 - Create a new dir inside root: `mkdir srv`
-- Clone repository inside `srv` : 
+- Clone repository inside `srv` : `https://github.com/avighub/family-tree-webtrees.git`
 - Rename/Copy `.env-example` to `.env`
   - Update passwords for `MARIADB_ROOT_PASSWORD` and `MARIADB_PASSWORD`
 - Start the apps : `docker compose up -d`
