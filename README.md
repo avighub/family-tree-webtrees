@@ -39,3 +39,7 @@ This project offers a comprehensive genealogy and family tree management system,
     - Database user: webtrees
     - Database password: your-password-from-env-file
   - Add a Family Name and you are done with setup, proceed with data collection.
+ 
+## References
+- https://webtrees.net/
+- https://hub.docker.com/r/dtjs48jkt/webtrees
