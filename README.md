@@ -4,7 +4,7 @@ A containerised family tree management application using **Webtrees** with **Mar
 
 ## Project Overview
 
-This project provides a complete genealogy and family tree management system powered by Webtrees, a free and open-source genealogy software. It's containerised using Docker for easy deployment and management across different environments.
+This project offers a comprehensive genealogy and family tree management system, powered by Webtrees, a free and open-source genealogy software. It's containerised using Docker for easy deployment and management across different environments.
 
 ### Key Features
 - **Webtrees**: A powerful genealogy platform for managing family trees
@@ -22,8 +22,10 @@ This project provides a complete genealogy and family tree management system pow
 - Once cloned, navigate to repo dir: `cd family-tree-webtrees`
 - In `deploy-webtrees.sh`, update `APP_DIR`:
   - It is important to define based on where you created `webtrees-app`. Example : `APP_DIR="$HOME/webtrees-app/$ROUTER_NAME"`
-- Copy `.env-example` to `.env`: `cp .env-example .env`
+- Copy `.env-example` to `APP_DIR`: `cp .env-example <APP_DIR>/.env`
+- Since env files are hidden, check with `ls -a` to confirm
 - Update passwords for `MARIADB_ROOT_PASSWORD` and `MARIADB_PASSWORD`
+- Update file permission: `chmod +x deploy-webtrees.sh`
 - Deploy and Start the app: `./deploy-webtrees.sh`
 - Open the Webtrees setup wizard: `localhost:8080`
   - DB Config
