@@ -1,6 +1,6 @@
 # Family Tree - Webtrees
 
-A containerized family tree management application using **Webtrees** with **MariaDB** database and Docker Compose orchestration.
+A containerised family tree management application using **Webtrees** with **MariaDB** database and Docker Compose orchestration.
 
 ## Project Overview
 
@@ -17,12 +17,13 @@ This project provides a complete genealogy and family tree management system pow
 
 - Create a new dir inside root: `mkdir srv`
 - Clone repository inside `srv` : `https://github.com/avighub/family-tree-webtrees.git`
+- Navigate to project root: `cd family-tree-webtrees`
 - Rename/Copy `.env-example` to `.env`
   - Update passwords for `MARIADB_ROOT_PASSWORD` and `MARIADB_PASSWORD`
-- Start the apps : `docker compose up -d`
+- Deploy and Start the app : `./deploy-webtrees.sh`
 - Open the Webtrees setup wizard: `localhost:8080`
   - DB Config
-    - Database server : db
+    - Database server: db
     - Database port: 3306
     - Database name: webtrees
     - Database user: webtrees
