@@ -28,9 +28,14 @@ This project offers a comprehensive genealogy and family tree management system,
 - Update file permission: `chmod +x deploy-webtrees.sh`
 - Deploy and Start the app: `./deploy-webtrees.sh`
 - Open the Webtrees setup wizard: `localhost:8080`
-  - DB Config
-    - Database server: db
-    - Database port: 3306
+  - Checking server capacity: Ignore the warning `This server’s memory limit is 0 MB and its CPU time limit is 90 seconds.` and click Next
+  - Connection to database server
+    - Database type: `MySQL`
+  - Database connection
+    - Connection type: localhost: (Keep as is )
+    - Server name: db
+    - Port number: 3306
     - Database name: webtrees
     - Database user: webtrees
     - Database password: your-password-from-env-file
+  - Add a Family Name and you are done with setup, proceed with data collection.
