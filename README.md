@@ -4,7 +4,7 @@ A containerised family tree management application using **Webtrees** with **Mar
 
 ## Project Overview
 
-This project provides a complete genealogy and family tree management system powered by Webtrees, a free and open-source genealogy software. It's containerized using Docker for easy deployment and management across different environments.
+This project provides a complete genealogy and family tree management system powered by Webtrees, a free and open-source genealogy software. It's containerised using Docker for easy deployment and management across different environments.
 
 ### Key Features
 - **Webtrees**: A powerful genealogy platform for managing family trees
@@ -14,13 +14,17 @@ This project provides a complete genealogy and family tree management system pow
 - **Persistent Storage**: Data persistence across container restarts
 
 ## Quick Start
-
-- Create a new dir inside root: `mkdir srv`
-- Clone repository inside `srv` : `https://github.com/avighub/family-tree-webtrees.git`
-- Navigate to project root: `cd family-tree-webtrees`
-- Rename/Copy `.env-example` to `.env`
-  - Update passwords for `MARIADB_ROOT_PASSWORD` and `MARIADB_PASSWORD`
-- Deploy and Start the app : `./deploy-webtrees.sh`
+- Create a new dir as per your choice: `mkdir webtrees-app`
+- Clone repository inside `webtrees-app`: `git clone https://github.com/avighub/family-tree-webtrees.git`
+- One Simple Rule (Everything Else Follows)
+  - The script decides where the website lives.
+  - NOT the folder you run the script from.
+- Once cloned, navigate to repo dir: `cd family-tree-webtrees`
+- In `deploy-webtrees.sh`, update `APP_DIR`:
+  - It is important to define based on where you created `webtrees-app`. Example : `APP_DIR="$HOME/webtrees-app/$ROUTER_NAME"`
+- Copy `.env-example` to `.env`: `cp .env-example .env`
+- Update passwords for `MARIADB_ROOT_PASSWORD` and `MARIADB_PASSWORD`
+- Deploy and Start the app: `./deploy-webtrees.sh`
 - Open the Webtrees setup wizard: `localhost:8080`
   - DB Config
     - Database server: db
